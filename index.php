@@ -1,23 +1,24 @@
 <?php
 session_start();
-$usertest="test";
-$passtest="123";
-if(isset($_POST) && !empty($_POST))
-    {
-        if(!empty($_POST["username"]) && !empty($_POST["password"]))
-            {
-                if($_POST["username"] === $usertest && $_POST["password"] === $passtest) 
-                {   
-                    $_SESSION["username"] = $usertest;
-                    header("Location: welcome.php");
-                }
-                else
-                {
-                    header("Location: index.html");
-                }
-            }
-        else 
-            {   
-                echo "missing required params";    
-            }    
-    }
+
+if(!empty($_SESSION["username"])) {
+    header("Location: welcome.php");
+}
+
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login page</title>
+    </head>
+    <body>
+        <form method="POST" action="login.php">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username"><br>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password"><br>
+            <button type="submit">Sign in!</button>
+        </form></br>
+        <a href="registration.html">You already have a registration ?</a>
+    </body>
+</html>
