@@ -17,6 +17,8 @@ if(!empty($_SESSION["username"])) {
             <input type="text" name="username" placeholder="Username"><br>
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br>
+            <label>Access</label>
+            <input type="checkbox" name="access"><br>
             <button type="submit">Sign in!</button>
         </form></br>
         <a href="registration.html">You already have a registration ?</a>
